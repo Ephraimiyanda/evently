@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --coral: 360 100% 70%;
+  --teal: 174 72% 56%;
+  --mint: 152 68% 75%;
+  --lavender: 300 47% 75%;
+  --light-blue: 197 71% 73%;
+  --bg-position-small: 10% 2%;
+}

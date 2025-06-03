@@ -1,0 +1,161 @@
+"use client";
+import { Link } from "@heroui/link";
+import { button as buttonStyles } from "@heroui/theme";
+import { siteConfig } from "@/config/site";
+import { title, subtitle } from "@/components/common/primitives";
+import { GithubIcon } from "@/components/icons/icons";
+import { motion } from "framer-motion";
+import { features } from "@/config/features";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import FeaturesCard from "@/components/cards/feature-cards";
+import BenefactorsCard from "@/components/cards/benefactors-cards";
+import AdvantageLayout from "@/components/section-layouts/advantage-layout";
+import { Button } from "@heroui/button";
+import { ArrowRight } from "lucide-react";
+
+export default function Home() {
+  const { ref, controls } = useScrollAnimation();
+
+  return (
+    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10  ">
+      <section
+        id="introduction"
+        className="flex flex-col items-center justify-center gap-4  "
+      >
+        <div className="inline-block max-w-xl text-center justify-center">
+          <span className={title()}>Make&nbsp;</span>
+          <span className={title({ color: "blue" })}>beautiful&nbsp;</span>
+          <br />
+          <span className={title()}>
+            websites regardless of your design experience.
+          </span>
+          <div className={subtitle({ class: "mt-4" })}>
+            Beautiful, fast and modern React UI library.
+          </div>
+        </div>
+
+        <div className="flex gap-3">
+          <Link
+            isExternal
+            className={buttonStyles({
+              color: "primary",
+              radius: "full",
+              variant: "shadow",
+            })}
+            href={siteConfig.links.docs}
+          >
+            Documentation
+          </Link>
+          <Link
+            isExternal
+            className={buttonStyles({ variant: "bordered", radius: "full" })}
+            href={siteConfig.links.github}
+          >
+            <GithubIcon size={20} />
+            GitHub
+          </Link>
+        </div>
+      </section>
+      <section
+        id="features"
+        className="flex flex-col items-center justify-center gap-4 py-8 md:py-14"
+      >
+        <div ref={ref} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={controls}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold ">
+              Everything You Need to{" "}
+              <span className={title({ color: "blue" })}>Succeed</span>
+            </h2>
+            <p className={subtitle({ class: "mt-4" })}>
+              Our comprehensive suite of tools makes event planning simple,
+              organized, and stress-free.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <FeaturesCard
+                key={index}
+                feature={feature}
+                controls={controls}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section
+        id="benefactors"
+        className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 pt-0 sm:bg-[url(/background/blurry.svg)] bg-[url(/background/blurry-vertical.svg)] bg-no-repeat bg-center sm:bg-[size:90%] bg-cover w-full"
+      >
+        <h3 className="my-4 text-center">
+          <span className={title()}>Who can </span>{" "}
+          <span className={title({ color: "blue" })}>benefit</span>{" "}
+          <span className={title()}>from our services</span>
+        </h3>
+        <div className="flex flex-col items-center justify-center gap-4">
+          <BenefactorsCard />
+        </div>
+      </section>
+      <section
+        id="advantages"
+        className="flex flex-col md:self-stretch items-center justify-center gap-4 py-8 md:py-10 pt-0 "
+      >
+        <h3 className="my-4 text-center">
+          <span className={title({ color: "blue" })}>Advantages </span>{" "}
+          <span className={title()}>of using</span>
+          <br />
+          <span className={title()}>our app</span>
+        </h3>
+        <AdvantageLayout />
+      </section>
+      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 pt-0 text-center">
+        <div>
+          <motion.h4
+            // initial={{ opacity: 0, y: 30 }}
+            // animate={controls}
+            // transition={{ duration: 0.6 }}
+            className="mb-4"
+          >
+            <span className={title()}>Ready to </span>
+            <span className={title({ color: "blue" })}>plan</span>{" "}
+            <span className={title()}> your next event?</span>
+          </motion.h4>
+
+          <motion.p
+            // initial={{ opacity: 0, y: 30 }}
+            // animate={controls}
+            // transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl dark:text-white/90 mb-10 max-w-3xl mx-auto"
+          >
+            Join thousands of users who have simplified their event planning
+            with EventFlow. Start your free trial today!
+          </motion.p>
+
+          <motion.div
+          // initial={{ opacity: 0, y: 30 }}
+          // animate={controls}
+          // transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <Button
+              endContent={<ArrowRight size={25} />}
+              radius="full"
+              size="lg"
+              fullWidth={true}
+              className="py-2 h-10 shadow-md w-fit"
+              variant="shadow"
+              color="primary"
+            >
+              Download now
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+    </section>
+  );
+}
