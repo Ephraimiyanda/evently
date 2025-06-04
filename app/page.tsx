@@ -22,38 +22,35 @@ export default function Home() {
         id="introduction"
         className="flex flex-col items-center justify-center gap-4  "
       >
-        <div className="inline-block max-w-xl text-center justify-center">
-          <span className={title()}>Make&nbsp;</span>
-          <span className={title({ color: "blue" })}>beautiful&nbsp;</span>
+        <div className="flex flex-wrap max-w-2xl text-center justify-center">
+          <span className={title()}>Streamline&nbsp;</span>
+          <span className={title({ color: "blue" })}>Event&nbsp;</span>
           <br />
-          <span className={title()}>
-            websites regardless of your design experience.
-          </span>
+          <span className={title()}>planning, creating&nbsp;</span>
+          <span className={title({ color: "blue" })}>simplicity&nbsp;</span>
+          <span className={title()}>and&nbsp;</span>
+          <span className={title({ color: "blue" })}>efficiency</span>
+          <span className={title()}>.</span>
           <div className={subtitle({ class: "mt-4" })}>
-            Beautiful, fast and modern React UI library.
+            Making event planning effortless, plan better, stress less.
           </div>
         </div>
 
-        <div className="flex gap-3">
-          <Link
+        <div className="flex justify-center gap-3">
+          <Button
+            as={Link}
             isExternal
-            className={buttonStyles({
-              color: "primary",
-              radius: "full",
-              variant: "shadow",
-            })}
-            href={siteConfig.links.docs}
+            href="#"
+            endContent={<ArrowRight size={25} />}
+            radius="full"
+            size="lg"
+            fullWidth={true}
+            className="py-2 h-10 shadow-md w-fit"
+            variant="shadow"
+            color="primary"
           >
-            Documentation
-          </Link>
-          <Link
-            isExternal
-            className={buttonStyles({ variant: "bordered", radius: "full" })}
-            href={siteConfig.links.github}
-          >
-            <GithubIcon size={20} />
-            GitHub
-          </Link>
+            Download now
+          </Button>
         </div>
       </section>
       <section

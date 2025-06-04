@@ -8,20 +8,6 @@ import { Button } from "@heroui/button";
 import { useState } from "react";
 import { Input, Textarea } from "@heroui/input";
 import { Form } from "@nextui-org/react";
-const footerLinks = {
-  product: [
-    { name: "Features", href: "#features" },
-    { name: "Pricing", href: "#" },
-    { name: "Integrations", href: "#" },
-    { name: "API", href: "#" },
-  ],
-  company: [
-    { name: "About", href: "#" },
-    { name: "Contact", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-  ],
-};
 
 const socialLinks = [
   { icon: Twitter, href: "#", label: "Twitter" },
@@ -42,20 +28,16 @@ export default function Footer() {
   };
 
   return (
-    <footer>
+    <footer className="bg-[url(/background/ssstar.svg)] bg-no-repeat bg-center bg-cover">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 backdrop-blur-sm  bg-transparent py-8 ">
         <div className="grid md:grid-cols-7 gap-8 w-full">
           <div className="md:col-span-3">
-            <motion.div
-              className="flex items-center space-x-2 mb-6"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
+            <Link className="flex justify-start items-center gap-1" href="/">
               <div>
                 <Logo />
               </div>
               <span className="text-2xl font-bold">Evently</span>
-            </motion.div>
+            </Link>
             <p className="dark:text-gray-300 leading-relaxed  mb-6">
               Making event planning effortless for individuals and teams
               worldwide. Plan better, stress less.
@@ -75,8 +57,8 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="md:col-span-4 flex justify-normal gap-10 sm:gap-14 md:justify-evenly  w-full flex-wrap sm:flex-nowrap">
-            <div className="sm:w-full">
+          <div className="md:col-span-4 flex justify-normal gap-10 sm:gap-14 md:justify-around  w-full flex-wrap sm:flex-nowrap">
+            <div className="">
               <p className="font-bold text-lg mb-4">Product</p>
               <ul className="space-y-2">
                 {siteConfig.navItems.map((link) => (
@@ -88,21 +70,10 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-            <div className="sm:w-full">
-              <p className="font-bold text-lg mb-4">Company</p>
-              <ul className="space-y-2 ">
-                {footerLinks.company.map((link) => (
-                  <li key={link.name}>
-                    <Link href={link.href} className="hover:text-primary">
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div id="contact-us" className="w-full">
+
+            <div id="contact-us" className="w-full sm:w-fit">
               <p className="font-bold text-lg mb-4">Contact Us</p>
-              <Form className="w-full md:w-[300px]" onSubmit={onSubmit}>
+              <Form className="w-full sm:w-[300px]" onSubmit={onSubmit}>
                 <Input
                   isRequired
                   errorMessage="Please enter a valid email"

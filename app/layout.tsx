@@ -37,7 +37,7 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen text-foreground bg-background font-sans antialiased bg-[url(/background/oscillate.svg)] bg-no-repeat sm:bg-top bg-[position:--bg-position-small] bg-contain",
+          "min-h-screen text-foreground bg-background font-sans antialiased bg-[url(/background/oscillate.svg)] bg-no-repeat sm:bg-top bg-[position:--bg-position-small] bg-contain scroll-smooth",
           fontSans.variable
         )}
       >

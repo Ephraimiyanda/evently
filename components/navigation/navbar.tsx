@@ -26,7 +26,7 @@ export const Navbar = () => {
       maxWidth="xl"
       position="sticky"
       isBordered
-      isBlurred={false}
+      // isBlurred={false}
       className="z-50"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
@@ -86,15 +86,15 @@ export const Navbar = () => {
       <NavbarMenu>
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navItems.map((item, index) => (
-            <NavbarMenuItem
-              as={Link}
-              href={item.href}
-              onClick={() => {
-                setIsMenuOpen(!isMenuOpen);
-              }}
-              key={`${item}-${index}`}
-            >
-              <p>{item.label}</p>
+            <NavbarMenuItem key={`${item}-${index}`}>
+              <Link
+                onClick={() => {
+                  setIsMenuOpen(!isMenuOpen);
+                }}
+                href={item.href}
+              >
+                {item.label}
+              </Link>
             </NavbarMenuItem>
           ))}
         </div>
