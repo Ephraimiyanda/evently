@@ -86,14 +86,18 @@ export default function Footer() {
                   name="email"
                   placeholder="Enter your email"
                   type="email"
+                  variant="bordered"
+                  color="primary"
                 />
                 <Textarea
                   isRequired
                   className="w-full"
                   label="Description"
                   placeholder="Enter your description"
+                  variant="bordered"
+                  color="primary"
                 />
-                <Button type="submit" variant="bordered">
+                <Button type="submit" color="primary" variant="bordered">
                   Submit
                 </Button>
                 {submitted && (
