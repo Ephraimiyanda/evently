@@ -74,7 +74,10 @@ export default function Footer() {
 
             <div className="w-full sm:w-fit" id="contact-us">
               <p className="font-bold text-lg mb-4">Contact Us</p>
-              <form className="w-full sm:w-[300px]" onSubmit={onSubmit}>
+              <form
+                className="w-full flex flex-col gap-4 sm:w-[300px]"
+                onSubmit={onSubmit}
+              >
                 <Input
                   isRequired
                   errorMessage="Please enter a valid email"
