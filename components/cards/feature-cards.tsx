@@ -1,5 +1,6 @@
 import { AnimationControls, motion } from "framer-motion";
 import { Card, CardBody } from "@nextui-org/react";
+
 import { featureTypes } from "@/types/features";
 
 export default function FeaturesCard({
@@ -11,20 +12,12 @@ export default function FeaturesCard({
   controls: AnimationControls;
   index: number;
 }) {
-  const colors: any = {
-    "Event Creation": "from-[hsl(var(--coral))] to-pink-400",
-    "Guest Management": "from-[hsl(var(--teal))] to-[hsl(var(--mint))]",
-    "Task Checklist": "from-[hsl(var(--lavender))] to-purple-400",
-    "Event Agenda": "from-yellow-400 to-orange-400",
-    "Smart Reminders": "from-green-400 to-[hsl(var(--mint))]",
-    "Budget Tracking": "from-[hsl(var(--light-blue))] to-blue-400",
-  };
   return (
     <motion.div
       key={feature.title}
-      initial={{ opacity: 0, y: 30 }}
       animate={controls}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      initial={{ opacity: 0, y: 30 }}
+      transition={{ duration: 0.6, delay: index * 0.4 }}
     >
       <Card
         className="p-8 h-full transition-all duration-300 transform hover:-translate-y-2 "

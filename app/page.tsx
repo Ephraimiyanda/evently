@@ -1,17 +1,15 @@
 "use client";
 import { Link } from "@heroui/link";
-import { button as buttonStyles } from "@heroui/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/common/primitives";
-import { GithubIcon } from "@/components/icons/icons";
 import { motion } from "framer-motion";
+import { Button } from "@heroui/button";
+import { ArrowRight } from "lucide-react";
+
+import { title, subtitle } from "@/components/common/primitives";
 import { features } from "@/config/features";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import FeaturesCard from "@/components/cards/feature-cards";
 import BenefactorsCard from "@/components/cards/benefactors-cards";
 import AdvantageLayout from "@/components/section-layouts/advantage-layout";
-import { Button } from "@heroui/button";
-import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const { ref, controls } = useScrollAnimation();
@@ -19,8 +17,8 @@ export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10  ">
       <section
-        id="introduction"
         className="flex flex-col items-center justify-center gap-4  "
+        id="introduction"
       >
         <div className="flex flex-wrap max-w-2xl text-center justify-center">
           <span className={title()}>Streamline&nbsp;</span>
@@ -38,31 +36,31 @@ export default function Home() {
 
         <div className="flex justify-center gap-3">
           <Button
-            as={Link}
             isExternal
-            href="#"
+            as={Link}
+            className="py-2 h-10 shadow-md w-fit"
+            color="primary"
             endContent={<ArrowRight size={25} />}
+            fullWidth={true}
+            href="#"
             radius="full"
             size="lg"
-            fullWidth={true}
-            className="py-2 h-10 shadow-md w-fit"
             variant="shadow"
-            color="primary"
           >
             Download now
           </Button>
         </div>
       </section>
       <section
-        id="features"
         className="flex flex-col items-center justify-center gap-4 py-8 md:py-14"
+        id="features"
       >
         <div ref={ref} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
             animate={controls}
-            transition={{ duration: 0.6 }}
             className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold ">
               Everything You Need to{" "}
@@ -78,8 +76,8 @@ export default function Home() {
             {features.map((feature, index) => (
               <FeaturesCard
                 key={index}
-                feature={feature}
                 controls={controls}
+                feature={feature}
                 index={index}
               />
             ))}
@@ -87,8 +85,8 @@ export default function Home() {
         </div>
       </section>
       <section
-        id="benefactors"
         className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 pt-0 sm:bg-[url(/background/blurry.svg)] bg-[url(/background/blurry-vertical.svg)] bg-no-repeat bg-center sm:bg-[size:90%] bg-cover w-full"
+        id="benefactors"
       >
         <h3 className="my-4 text-center">
           <span className={title()}>Who can </span>{" "}
@@ -100,8 +98,8 @@ export default function Home() {
         </div>
       </section>
       <section
-        id="advantages"
         className="flex flex-col md:self-stretch items-center justify-center gap-4 py-8 md:py-10 pt-0 "
+        id="advantages"
       >
         <h3 className="my-4 text-center">
           <span className={title({ color: "blue" })}>Advantages </span>{" "}
@@ -140,13 +138,13 @@ export default function Home() {
           // transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Button
+              className="py-2 h-10 shadow-md w-fit"
+              color="primary"
               endContent={<ArrowRight size={25} />}
+              fullWidth={true}
               radius="full"
               size="lg"
-              fullWidth={true}
-              className="py-2 h-10 shadow-md w-fit"
               variant="shadow"
-              color="primary"
             >
               Download now
             </Button>

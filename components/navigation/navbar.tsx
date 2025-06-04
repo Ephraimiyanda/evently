@@ -13,23 +13,24 @@ import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 import { Link } from "@heroui/link";
+import { useState } from "react";
+
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme/theme-switch";
 import { Logo } from "@/components/icons/icons";
-import { useState } from "react";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <HeroUINavbar
+      isMenuOpen={isMenuOpen}
       maxWidth="xl"
       position="sticky"
+      onMenuOpenChange={setIsMenuOpen}
       isBordered
       // isBlurred={false}
       className="z-50"
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
@@ -39,7 +40,7 @@ export const Navbar = () => {
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent justify="center" className="sm:flex hidden">
+      <NavbarContent className="sm:flex hidden" justify="center">
         <ul className="hidden lg:flex gap-6 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
@@ -64,12 +65,12 @@ export const Navbar = () => {
         <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
           <Button
+            className="py-2 h-10 shadow-md"
+            color="primary"
+            fullWidth={true}
             radius="full"
             size="lg"
-            fullWidth={true}
-            className="py-2 h-10 shadow-md"
             variant="shadow"
-            color="primary"
           >
             Download
           </Button>
@@ -88,10 +89,10 @@ export const Navbar = () => {
           {siteConfig.navItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
+                href={item.href}
                 onClick={() => {
                   setIsMenuOpen(!isMenuOpen);
                 }}
-                href={item.href}
               >
                 {item.label}
               </Link>

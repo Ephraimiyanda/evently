@@ -1,4 +1,4 @@
-import { Blocks, Minimize, Shield, Shrink } from "lucide-react";
+import { Blocks, Shield, Shrink } from "lucide-react";
 
 export const advantages = [
   {

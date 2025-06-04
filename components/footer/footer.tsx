@@ -1,13 +1,15 @@
 "use client";
-import { siteConfig } from "@/config/site";
 import { motion } from "framer-motion";
-import { Calendar, Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
-import { Logo } from "../icons/icons";
 import { Button } from "@heroui/button";
 import { useState } from "react";
 import { Input, Textarea } from "@heroui/input";
 import { Form } from "@nextui-org/react";
+
+import { Logo } from "../icons/icons";
+
+import { siteConfig } from "@/config/site";
 
 const socialLinks = [
   { icon: Twitter, href: "#", label: "Twitter" },
@@ -46,11 +48,11 @@ export default function Footer() {
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.label}
-                  href={social.href}
-                  className="w-10 h-10 bg-gradient-to-b from-[#5EA2EF] to-[#0072F5] rounded-full flex items-center justify-center "
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.2 }}
                   aria-label={social.label}
+                  className="w-10 h-10 bg-gradient-to-b from-[#5EA2EF] to-[#0072F5] rounded-full flex items-center justify-center "
+                  href={social.href}
+                  transition={{ duration: 0.2 }}
+                  whileHover={{ scale: 1.1 }}
                 >
                   <social.icon className="w-4 h-4 text-white" />
                 </motion.a>
@@ -63,7 +65,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 {siteConfig.navItems.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className="hover:text-primary">
+                    <Link className="hover:text-primary" href={link.href}>
                       {link.label}
                     </Link>
                   </li>
@@ -71,7 +73,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div id="contact-us" className="w-full sm:w-fit">
+            <div className="w-full sm:w-fit" id="contact-us">
               <p className="font-bold text-lg mb-4">Contact Us</p>
               <Form className="w-full sm:w-[300px]" onSubmit={onSubmit}>
                 <Input
