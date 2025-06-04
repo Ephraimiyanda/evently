@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Button } from "@heroui/button";
 import { useState } from "react";
 import { Input, Textarea } from "@heroui/input";
-import { Form } from "@nextui-org/react";
 
 import { Logo } from "../icons/icons";
 
@@ -75,7 +74,7 @@ export default function Footer() {
 
             <div className="w-full sm:w-fit" id="contact-us">
               <p className="font-bold text-lg mb-4">Contact Us</p>
-              <Form className="w-full sm:w-[300px]" onSubmit={onSubmit}>
+              <form className="w-full sm:w-[300px]" onSubmit={onSubmit}>
                 <Input
                   isRequired
                   errorMessage="Please enter a valid email"
@@ -99,7 +98,7 @@ export default function Footer() {
                     You submitted: <code>{JSON.stringify(submitted)}</code>
                   </div>
                 )}
-              </Form>
+              </form>
             </div>
           </div>
         </div>
