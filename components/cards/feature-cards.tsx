@@ -1,5 +1,5 @@
 import { AnimationControls, motion } from "framer-motion";
-import { Card, CardBody } from "@nextui-org/react";
+import { Card, CardBody } from "@heroui/card";
 
 import { featureTypes } from "@/types/features";
 
