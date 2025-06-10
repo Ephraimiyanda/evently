@@ -48,7 +48,7 @@ export default function Footer() {
                 <motion.a
                   key={social.label}
                   aria-label={social.label}
-                  className="w-10 h-10 bg-gradient-to-b from-[#5EA2EF] to-[#0072F5] rounded-full flex items-center justify-center "
+                  className="w-10 h-10 bg-primary rounded-full flex items-center justify-center "
                   href={social.href}
                   transition={{ duration: 0.2 }}
                   whileHover={{ scale: 1.1 }}
@@ -86,18 +86,13 @@ export default function Footer() {
                   name="email"
                   placeholder="Enter your email"
                   type="email"
-                  variant="bordered"
-                  color="primary"
                 />
                 <Textarea
                   isRequired
-                  className="w-full"
                   label="Description"
                   placeholder="Enter your description"
-                  variant="bordered"
-                  color="primary"
                 />
-                <Button type="submit" color="primary" variant="bordered">
+                <Button type="submit" color="primary" variant="solid">
                   Submit
                 </Button>
                 {submitted && (

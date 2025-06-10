@@ -55,7 +55,7 @@ export default function Home() {
         className="flex flex-col items-center justify-center gap-4 py-8 md:py-14"
         id="features"
       >
-        <div ref={ref} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={ref} className="max-w-6xl mx-auto  sm:px-6 lg:px-8">
           <motion.div
             animate={controls}
             className="text-center mb-16"
