@@ -9,7 +9,7 @@ export default function BenefactorsCard() {
   // Function to return different animation directions
   const getInitial = (index: number) => {
     const directions = [
-      { x: 50, y: 0 }, // from left
+      { x: -50, y: 0 }, // from left
       { x: 0, y: 50 }, // from bottom
       { x: 50, y: 0 }, // from right
     ];
@@ -27,8 +27,8 @@ export default function BenefactorsCard() {
           key={index}
           animate={controls}
           className="w-full flex justify-center"
-          initial={{ opacity: 0, ...getInitial(index) }}
           transition={{ duration: 0.6, delay: index * 0.4 }}
+          initial={{ opacity: 0, y: -30 * index }}
         >
           <Card
             className="p-8 transition-all duration-300 transform hover:-translate-y-2 w-full max-w-[280px] h-[130px]"

@@ -93,7 +93,7 @@ export default function Home() {
           <span className={title({ color: "blue" })}>benefit</span>{" "}
           <span className={title()}>from our services</span>
         </h3>
-        <div className="flex flex-col items-center justify-center gap-4">
+        <div className="flex flex-col w-full md:w-auto justify-center gap-4">
           <BenefactorsCard />
         </div>
       </section>

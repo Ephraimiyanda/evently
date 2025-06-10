@@ -93,6 +93,7 @@ export const Navbar = () => {
                 onClick={() => {
                   setIsMenuOpen(!isMenuOpen);
                 }}
+                className="text-black dark:text-white"
               >
                 {item.label}
               </Link>
