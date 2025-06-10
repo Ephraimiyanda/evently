@@ -9,7 +9,7 @@ export default function BenefactorsCard() {
   // Function to return different animation directions
   const getInitial = (index: number) => {
     const directions = [
-      { x: -50, y: 0 }, // from left
+      { x: 50, y: 0 }, // from left
       { x: 0, y: 50 }, // from bottom
       { x: 50, y: 0 }, // from right
     ];
